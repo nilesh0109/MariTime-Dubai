@@ -1,0 +1,28 @@
+.innovation-wrapper {
+    margin-top: -140px;
+
+    @media (min-width: $screen-sm-min) {
+        .section-title {
+            margin-bottom: 60px;
+        }
+    }
+
+    @media (max-width: $screen-md-max) and (min-width: $screen-sm-min) {
+        margin-top: -50px;
+
+        .section-title {
+            margin-top: 50px;
+        }
+    }
+
+    .img-container {
+        position: relative;
+
+        .dmca-logo {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

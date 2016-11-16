@@ -1,0 +1,17 @@
+.potential-wrapper {
+    margin-bottom: 80px;
+
+    .textWrapper {
+        padding-#{$left}: 0px;
+    }
+
+    .img-container {
+        margin-top: -70px;
+        margin-bottom: 80px;
+
+        &:after {
+            bottom: -80px;
+            #{$left}: -55px;
+        }
+    }
+}

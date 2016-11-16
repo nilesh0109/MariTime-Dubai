@@ -1,0 +1,78 @@
+.form-section {
+    &:after {
+        content: "";
+        width: 70%;
+        height: 1px;
+        background: $gray;
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+.form-validate {
+    .form-row {
+        display: flex;
+
+        > * {
+            width: 47.5%;
+
+            &:first-child {
+                margin-#{$right}: 2.5%;
+            }
+
+            &:last-child {
+                margin-#{$left}: 2.5%;
+            }
+
+            @media (max-width: 480px) {
+                width: 100%;
+                margin: 0 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            display: block;
+        }
+    }
+
+    .form-control {
+        padding: 10px 0;
+        position: relative;
+
+        .fa {
+            position: absolute;
+            top: 18px;
+            #{$left}: 10px;
+            color: $gray;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px 30px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 5px 30px;
+            min-height: 100px;
+        }
+
+        &.full-height {
+            height: 100%;
+
+            textarea {
+                height: 100%;
+            }
+        }
+    }
+}
+
+.blue-form-btn {
+    padding: 10px 30px;
+    text-align: center;
+    min-width: 220px;
+    color: $white;
+    background: $blue;
+    border: 0;
+    box-shadow: none;
+}

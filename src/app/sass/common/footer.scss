@@ -1,0 +1,15 @@
+footer {
+    .footer-back {
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 78px;
+        background-size: cover;
+        color: $white;
+
+        .copyright {
+            position: relative;
+            top: 30px;
+            display: inline-block;
+        }
+    }
+}

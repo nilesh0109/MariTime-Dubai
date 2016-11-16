@@ -1,0 +1,137 @@
+$sides: left right top bottom;
+$properties: padding margin;
+$align: $left $right;
+$colors: (name: royalblue, value: $royalblue) (name: blue, value: $blue) (name: acqa, value: $acqa) (name: lime, value: $lime) (name: white, value: $white);
+
+$text-transforms: captitalize lowercase uppercase;
+
+@each $transform in $text-transforms {
+    .text-#{$transform} {
+        text-transform: $transform;
+    }
+}
+
+@each $property in $properties {
+    @each $side in append($sides, all) {
+        $i: 0;
+
+        @while $i <= 50 {
+            .#{$property}-#{$side}-#{$i} {
+                @if $side == all {
+                    #{$property}: #{$i}px;
+                }
+
+                @if $side != all {
+                    #{$property}-#{$side}: #{$i}px;
+                }
+            }
+
+            $i: $i + 5;
+        }
+    }
+}
+
+$textAlign: append($align, center);
+
+@for $i from 1 through length($textAlign) {
+    .text-#{nth($textAlign, $i)} {
+        text-align: #{nth($textAlign, $i)};
+    }
+}
+
+@for $i from 1 through length($align) {
+    .float-#{nth($align, $i)} {
+        float: #{nth($align, $i)};
+    }
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+.blue-btn {
+    background: $blue;
+    padding: 10px 25px;
+    display: inline-block;
+    color: $white;
+
+    .fa {
+        @extend .padding-left-10;
+    }
+}
+
+.img-container {
+    position: relative;
+
+    img {
+        position: relative;
+        z-index: 1;
+    }
+
+    @each $color in $colors {
+        @each $edge1 in $sides {
+            @each $edge2 in $sides {
+                @if $edge1 != $edge2 {
+                    &.#{$edge1}-#{$edge2}-#{map-get($color, name)}-pattern {
+                        border-#{$edge1}: 20px solid transparent;
+                        border-#{$edge2}: 20px solid transparent;
+
+                        &:before {
+                            content: "";
+                            width: 40%;
+                            padding-top: 40%;
+                            height: 0px;
+                            display: block;
+                            position: absolute;
+                            #{$edge1}: -20px;
+                            #{$edge2}: -20px;
+                            background: map-get($color, value);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+$size: 120px;
+$borderside: right;
+$positions: before after;
+
+@each $side in $sides {
+    @each $color in $colors {
+        @each $pos in $positions {
+            .triangle-#{$side}-#{map-get($color, name)}-#{$pos} {
+                @if $side == left {
+                    $borderside: right;
+                }
+
+                @if $side == right {
+                    $borderside: left;
+                }
+
+                @if $side == top {
+                    $borderside: bottom;
+                }
+
+                @if $side == bottom {
+                    $borderside: top;
+                }
+
+                margin-#{$side}: 40px;
+                margin-bottom: 40px;
+                position: relative;
+
+                &:#{$pos} {
+                    @include triangle($side, $borderside, map-get($color, value), $size);
+
+                    content: "";
+                    position: absolute;
+                    bottom: -40px;
+                    #{$side}: -40px;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}

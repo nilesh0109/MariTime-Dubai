@@ -1,0 +1,67 @@
+.contact-info {
+    display: inline-block;
+    margin-#{$right}: 30px;
+    font-size: $font-20;
+    color: $darkgray;
+
+    + .contact-info {
+        &:before {
+            content: " ";
+            position: relative;
+            width: 1px;
+            height: 30px;
+            vertical-align: middle;
+            background: $gray;
+            display: inline-block;
+            margin-#{$right}: 30px;
+        }
+    }
+
+    &:last-child {
+        @media (min-width: $screen-sm-min) {
+            margin-#{$right}: 0px;
+            margin-#{$left}: 0px;
+        }
+    }
+
+    @media (max-width: $screen-xs-max) {
+        margin: 10px auto;
+        display: block;
+        max-width: 200px;
+        text-align: $left;
+
+        &:before {
+            content: none !important;
+        }
+    }
+}
+
+.contact-info-wrapper {
+    text-align: center;
+}
+
+.social-wrapper {
+    text-align: center;
+    margin: 20px 0;
+
+    .social-icon {
+        margin-#{$right}: 30px;
+
+        &:last-child {
+            margin-#{$right}: 0px;
+            margin-#{$left}: 0px;
+        }
+
+        &.instagram {
+            color: $insta;
+        }
+
+        &.twitter {
+            color: $twitter;
+        }
+
+        &.facebook {
+            color: $fb;
+        }
+    }
+}

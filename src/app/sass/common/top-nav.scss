@@ -1,0 +1,96 @@
+.top-nav-hamburger {
+    color: $white;
+
+    @media (max-width: $screen-xs-max) {
+        display: inline-block;
+        padding: 5px 0;
+    }
+}
+
+.top-nav-wrapper {
+    background-color: rgba(0, 89, 156, 0.8);
+    color: $white;
+    font-weight: normal;
+    font-size: $font-16;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+
+    .top-nav {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+
+        @media (max-width: $screen-md-max) {
+            font-size: $font-14;
+        }
+
+        @media (max-width: $screen-xs-max) {
+            display: block;
+            padding: 0;
+            font-size: $font-16;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        &.slide-down {
+            @media (max-width: $screen-xs-max) {
+                max-height: 1500px;
+            }
+        }
+
+        li {
+            padding: 5px;
+            position: relative;
+
+            &:first-child {
+                @media (min-width: $screen-sm-min) {
+                    padding-#{$left}: 0;
+                }
+            }
+
+            &:last-child {
+                @media (min-width: $screen-sm-min) {
+                    padding-#{$right}: 0;
+                }
+            }
+
+            a {
+                color: $white;
+                text-decoration: none;
+                display: inline-block;
+
+                &:hover, &:focus, &:active {
+                    text-decoration: none;
+                }
+            }
+
+            &:hover, &.active {
+                &:after {
+                    content: "";
+                    height: 1px;
+                    position: absolute;
+                    bottom: 5px;
+                    background: $white;
+                    #{$left}: 5px;
+                    #{$right}: 5px;
+                    display: block;
+
+                    @media (max-width: $screen-xs-max) {
+                        content: none;
+                    }
+                }
+
+                @media (max-width: $screen-xs-max) {
+                    > a {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.horizon-wrapper {
+    @media (max-width: $screen-xs-max) {
+        text-align: $left;
+    }
+
+    .img-container {
+        &:after {
+            bottom: 35%;
+            border-top-width: 120px;
+            border-left-width: 50px;
+            border-right-width: 50px;
+            #{$left}: 35%;
+            transform: translate(-50%, 50%);
+        }
+
+        img {
+            max-width: 70%;
+
+            @media (max-width: $screen-xs-max) {
+                max-width: 50%;
+            }
+        }
+
+        .horizon2 {
+            position: relative;
+            margin-top: -50%;
+            margin-#{$left}: 35%;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin triangle($arrowside, $borderside, $color, $size) {
+    display: block;
+    width: 0;
+    height: 0;
+    border-#{$arrowside}: 0;
+    border-#{$borderside}: $size solid $color;
+
+    $triangleSides: left right top bottom;
+
+    @each $side in $triangleSides {
+        @if $side != $arrowside and $side != $borderside {
+            border-#{$side}: $size solid transparent;
+        }
+    }
+}

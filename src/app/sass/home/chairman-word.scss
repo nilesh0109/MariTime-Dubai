@@ -1,0 +1,278 @@
+@import "../partials/_var";
+@import "../partials/_mixins";
+
+.home-section {
+    margin: 50px 0;
+    color: $lightgray;
+    position: relative;
+
+    .img-container {
+        max-width: 45%;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        text-align: center;
+
+        .img-container {
+            float: none;
+            display: inline-block;
+            max-width: none;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+
+    .textWrapper {
+        max-width: 48%;
+
+        @media (max-width: $screen-xs-max) {
+            max-width: none;
+        }
+    }
+
+    .name, .designation {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .name {
+        color: $darkgray;
+        font-weight: bold;
+    }
+}
+
+.quote-wrapper {
+    text-align: center;
+    color: $royalblue;
+
+    blockquote {
+        margin: 15px auto;
+        display: block;
+        max-width: 600px;
+        font-size: $font-36;
+        line-height: 1.2;
+
+        &:before, &:after {
+            content: "\201C";
+            margin-#{$right}: 5px;
+            font-size: 90px;
+            font-weight: bold;
+            line-height: 16px;
+            vertical-align: bottom;
+            position: relative;
+            top: -10px;
+        }
+
+        &:after {
+            content: "\201D";
+            margin-#{$right}: 0px;
+            margin-#{$left}: 5px;
+            top: 20px;
+        }
+    }
+
+    .author {
+        font-size: $font-14;
+        margin: 20px 0;
+    }
+}
+
+.pattern-back {
+    @media (max-width: $screen-md-max) {
+        background: none;
+    }
+
+    $containerWidth: 1300px;
+    $backgroundWidth: 236px;
+
+    background-repeat: no-repeat;
+
+    &.chairman-word-back {
+        @media (min-width: $containerWidth + $backgroundWidth * 2) {
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                #{$right}: 0px;
+                top: -80px;
+                background-image: url("../assets/images/home/chairmain-pattern.png");
+                width: $backgroundWidth;
+                height: 263px;
+                display: block;
+            }
+        }
+
+        @media (max-width: $containerWidth + $backgroundWidth * 2 - 1) {
+            overflow: hidden;
+
+            > .container {
+                position: relative;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    #{$left}: 100%;
+                    margin-#{$left}: -15px;
+                    top: -80px;
+                    background-image: url("../assets/images/home/chairmain-pattern.png");
+                    width: $backgroundWidth;
+                    height: 263px;
+                    display: block;
+                }
+            }
+        }
+
+        $backgroundWidth: 241px;
+
+        @media (min-width: $containerWidth + $backgroundWidth * 2) {
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                #{$left}: 0px;
+                bottom: -200px;
+                background-image: url("../assets/images/home/chairman-pattern-left.png");
+                width: $backgroundWidth;
+                height: 287px;
+                display: block;
+            }
+        }
+
+        @media (max-width: $containerWidth + $backgroundWidth * 2 - 1) {
+            overflow: hidden;
+
+            > .container {
+                position: relative;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    #{$right}: 100%;
+                    margin-#{$right}: -15px;
+                    bottom: -200px;
+                    background-image: url("../assets/images/home/chairman-pattern-left.png");
+                    width: $backgroundWidth;
+                    height: 287px;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &.potential-back {
+        $backgroundWidth: 115px;
+
+        @media (min-width: $containerWidth + $backgroundWidth * 2) {
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                #{$right}: 0px;
+                top: 0px;
+                background-image: url("../assets/images/home/potential-pattern1.png");
+                width: $backgroundWidth;
+                height: 197px;
+                display: block;
+            }
+        }
+
+        @media (max-width: $containerWidth + $backgroundWidth * 2 - 1) {
+            overflow: hidden;
+
+            > .container {
+                position: relative;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    #{$left}: 100%;
+                    margin-#{$left}: -15px;
+                    top: 0px;
+                    background-image: url("../assets/images/home/potential-pattern1.png");
+                    width: $backgroundWidth;
+                    height: 197px;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &.excellence-back {
+        $backgroundWidth: 249px;
+
+        @media (min-width: $containerWidth + $backgroundWidth * 2) {
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                #{$left}: 0px;
+                bottom: -50px;
+                background-image: url("../assets/images/home/excellence-pattern.png");
+                width: $backgroundWidth;
+                height: 115px;
+                display: block;
+            }
+        }
+
+        @media (max-width: $containerWidth + $backgroundWidth * 2 - 1) {
+            > .container {
+                position: relative;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    #{$right}: 100%;
+                    margin-#{$right}: -15px;
+                    bottom: -50px;
+                    background-image: url("../assets/images/home/excellence-pattern.png");
+                    width: $backgroundWidth;
+                    height: 115px;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &.horizon-back {
+        $backgroundWidth: 292px;
+
+        @media (min-width: $containerWidth + $backgroundWidth * 2) {
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                #{$right}: 0px;
+                top: -50px;
+                background-image: url("../assets/images/home/horizon-pattern.png");
+                width: $backgroundWidth;
+                height: 131px;
+                display: block;
+            }
+        }
+
+        @media (max-width: $containerWidth + $backgroundWidth * 2 - 1) {
+            overflow: hidden;
+
+            > .container {
+                position: relative;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    #{$left}: 100%;
+                    margin-#{$left}: -15px;
+                    top: -50px;
+                    background-image: url("../assets/images/home/horizon-pattern.png");
+                    width: $backgroundWidth;
+                    height: 131px;
+                    display: block;
+                }
+            }
+        }
+    }
+}
