@@ -1,6 +1,6 @@
-(function() {
-    'use strict';
+ (function() {
+     'use strict';
 
-    angular.module('mTDubai', ['ngRoute', 'ngMessages']);
+     angular.module('mTDubai', ['ngRoute', 'ngMessages']);
 
-})();
+ })();

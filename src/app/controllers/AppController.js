@@ -4,7 +4,7 @@
     angular.module('mTDubai')
         .controller('AppController', AppController);
 
-    function AppController($location, $anchorScroll, $document) {
+    function AppController($location, $document) {
         var vm = this;
         vm.hamburgerClick = function($event) {
             var hamburger = angular.element($event.target).closest('.top-nav-hamburger');
