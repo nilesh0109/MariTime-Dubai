@@ -1,27 +1,35 @@
 <div class="home-section form-section">
 	<h2 class='section-title text-uppercase margin-top-0'>CONTACT US</h2>
-	<form class="form-validate">
+	<form class="form-validate" name="userForm" novalidate>
 		<div class="form-row">
 			<div class="left-col">
 				<div class="form-control">
-					<input type="text" placeholder="Name:" name="name"/><i class="fa fa-user"></i>
+					<input type="text" placeholder="Name:" name="name" ng-model="name" ng-required="true" />
+					<i class="fa fa-user"></i>
+					<label class="error" ng-show="userForm.name.$error.required && !userForm.name.$pristine">Please enter your name</label>
 				</div>
 				<div class="form-control">
-					<input type="email" placeholder="Email:" name="email"/><i class="fa fa-envelope"></i>
+					<input type="email" placeholder="Email:" name="email" ng-model="email" ng-required="true" />
+					<i class="fa fa-envelope"></i>
+					<label class="error" ng-show="userForm.email.$error.required && !userForm.email.$pristine">Please enter your email</label>
+					<label class="error" ng-show="userForm.email.$error.email && !userForm.email.$pristine">Please enter a valid email</label>
 				</div>
 				<div class="form-control">
-					<input type="tel" placeholder="phone:" name="phone"/><i class="fa fa-phone-square"></i>
+					<input type="tel" placeholder="phone:" name="phone" ng-model="phone" ng-required="true" ng-pattern="/^\d+$/" 
+					 maxlength="12"/>
+					<i class="fa fa-phone-square"></i>
+					<label class="error" ng-show="userForm.phone.$error.required && !userForm.phone.$pristine">Please enter your phone Number</label>
+					<label class="error" ng-show="userForm.phone.$error.pattern || userForm.phone.$error.maxlength &&  !userForm.phone.$pristine">Please enter a valid phone Number(Only Numbers are allowed)</label>
 				</div>
 			</div>
 			<div class="right-col ">
 				<div class="form-control full-height">
 					<textarea placeholder="Comment:" name="comment" ></textarea> <i class="fa fa-comments"></i>
-					
 				</div>
 			</div>
 		</div>
 		<div class="form-control text-center">
-			<button type="submit" class="blue-form-btn">Send</button>
+			<button type="submit" class="blue-form-btn" ng-disabled="userForm.$invalid">Send</button>
 		</div>
 	</form>
 </div>

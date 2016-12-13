@@ -13,7 +13,7 @@
         vm.scrollTo = function(id) {
             $location.hash(id);
             angular.element('html,body').animate({
-                scrollTop: angular.element('#' + id).offset().top - 80
+                scrollTop: angular.element('#' + id).offset().top
             });
         }
         $document.on('click', function(e) {

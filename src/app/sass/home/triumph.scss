@@ -1,21 +1,26 @@
 .triumph-wrapper {
+    margin-bottom: 100px;
+    margin-top: -180px;
+
+    @media (max-width: $screen-md-max) {
+        margin-top: -152px;
+        max-width: 100%;
+    }
+
+    @media (max-width: $screen-sm-max) {
+        margin-top: -122px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        margin-top: -50px;
+        margin-bottom: 20px;
+    }
+
     .section-title {
-        margin-bottom: 100px;
-        margin-top: -180px;
         max-width: 60%;
 
-        @media (max-width: $screen-md-max) {
-            margin-top: -152px;
-            max-width: 100%;
-        }
-
-        @media (max-width: $screen-sm-max) {
-            margin-top: -122px;
-        }
-
-        @media (max-width: $screen-xs-max) {
-            margin-top: -50px;
-            margin-bottom: 20px;
+        @media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
+            font-size: $font-28;
         }
     }
 

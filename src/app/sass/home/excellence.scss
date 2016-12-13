@@ -43,6 +43,10 @@
         padding-#{$left}: 0px;
     }
 
+    @media (max-width: $screen-md-max + 200) {
+        margin-top: -130px;
+    }
+
     @media (max-width: $screen-md-max) {
         margin-top: -120px;
     }
@@ -59,7 +63,7 @@
         }
     }
 
-    @media (max-width: $screen-md-max) and (min-width: $screen-sm-min) {
+    @media (max-width: $screen-md-max + 200) and (min-width: $screen-sm-min) {
         .section-subtitle {
             color: $acqa;
             margin-top: 40px;

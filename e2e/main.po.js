@@ -5,11 +5,9 @@
 
 'use strict';
 
-var MainPage = function() {
-  this.intro = element(by.css('.intro'));
-  this.title = this.intro.element(by.css('h1'));
-  this.description = this.intro.element(by.css('p'));
-  this.image = this.intro.element(by.css('img'));
+var IndexPage = function() {
+    this.logo = element(by.css('.maritime-logo img'));
+    this.footer = element(by.css('.footer-back .copyright'));
 };
 
 module.exports = new MainPage();

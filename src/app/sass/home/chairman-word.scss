@@ -1,6 +1,10 @@
 @import "../partials/_var";
 @import "../partials/_mixins";
 
+#chairman-word-wrapper {
+    padding-top: 30px;
+}
+
 .home-section {
     margin: 50px 0;
     color: $lightgray;
@@ -95,7 +99,7 @@
                 content: "";
                 position: absolute;
                 #{$right}: 0px;
-                top: -80px;
+                top: -25px;
                 background-image: url("../assets/images/home/chairmain-pattern.png");
                 width: $backgroundWidth;
                 height: 263px;

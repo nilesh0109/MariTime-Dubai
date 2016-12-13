@@ -9,7 +9,11 @@
 
                 element.append(transcludeFn());
                 $timeout(function() {
-                    element.bxSlider();
+                    if (element.find('li').length > 1)
+                        element.bxSlider({
+                            infiniteLoop: false,
+                            hideControlOnEnd: true
+                        });
                 }, 0);
             }
         }

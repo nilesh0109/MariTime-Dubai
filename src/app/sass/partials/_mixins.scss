@@ -17,11 +17,12 @@
     border-#{$arrowside}: 0;
     border-#{$borderside}: $size solid $color;
 
+    $equilateralSide: $size / 1.732;
     $triangleSides: left right top bottom;
 
     @each $side in $triangleSides {
         @if $side != $arrowside and $side != $borderside {
-            border-#{$side}: $size solid transparent;
+            border-#{$side}: $equilateralSide solid transparent;
         }
     }
 }

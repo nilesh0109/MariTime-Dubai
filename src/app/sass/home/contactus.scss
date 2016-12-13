@@ -65,6 +65,17 @@
             }
         }
     }
+
+    button[disabled] {
+        transition: all 0.15s ease-in-out;
+        opacity: 0.4;
+    }
+
+    label.error {
+        font-size: $font-12;
+        color: $error;
+        position: absolute;
+    }
 }
 
 .blue-form-btn {
