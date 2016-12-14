@@ -1,4 +1,14 @@
-<div class="container">
+<div class="container" ng-init="vm.Triumps()">
+	<div class="triumph-wrapper home-section clearfix">
+		<h2 class='section-title text-uppercase'>{{vm.TriumpsData.Title}}</h2>
+		<figure class="img-container float-right">
+			<img class="img-responsive" ng-src="http://demoserver.tacme.net:3030/dmco{{vm.TriumpsData.MainImage}}" />
+		</figure>
+		<span ng-bind-html="vm.SafeHtml(vm.TriumpsData.Content)" ></span>
+	</div>
+</div>
+
+<!-- <div class="container">
 	<div class="triumph-wrapper home-section clearfix">
 		<h2 class='section-title text-uppercase'>A NUMBER OF SIGNIFICANT
 		TRIUMPHS</h2>
@@ -36,3 +46,4 @@
 		</div>
 	</div>
 </div>
+ -->

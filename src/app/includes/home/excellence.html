@@ -1,4 +1,23 @@
-<div class="container">
+<div class="container" ng-init="vm.Excellence()">
+	<div class="excellence-wrapper  home-section clearfix">
+		<figure class="img-container float-right margin-left-20 bottom-left-acqa-pattern">
+			<img class="img-responsive" ng-src="http://demoserver.tacme.net:3030/dmco{{vm.ExcellenceData.MainImage}}" />
+		</figure>
+		<div class="textWrapper float-left">
+			<h2 class='section-title text-uppercase margin-top-0'>{{vm.ExcellenceData.Title}}</h2>
+			<h4 class="section-subtitle text-uppercase">{{vm.ExcellenceData.Description}} </h4>
+			<h4 class="margin-top-50 margin-bottom-60">{{vm.ExcellenceData.Keywords}}</h4>
+			<p>
+				<span ng-bind-html="vm.SafeHtml(vm.ExcellenceData.Content)" ></span>
+			</p>
+			<!--<a class="blue-btn margin-top-40" href="javascript:void(0)">
+				<span>Read more</span><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+			</a>-->
+		</div>
+	</div>
+</div>
+
+<!-- <div class="container">
 	<div class="excellence-wrapper  home-section clearfix">
 		<figure class="img-container float-right margin-left-20 bottom-left-acqa-pattern">
 			<img class="img-responsive" src="assets/images/home/excellence.png" />
@@ -18,3 +37,4 @@
 		</div>
 	</div>
 </div>
+ -->

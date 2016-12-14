@@ -1,4 +1,18 @@
-<ul class="bxslider" id="top-slider" full-width-slider>
+<ul ng-init="vm.LoadBanners()" class="bxslider" id="top-slider" full-width-slider>
+	<li ng-repeat="item in vm.items"><img class="img-responsive" ng-src="http://demoserver.tacme.net:3030/dmco{{item.Url}}" /></li>
+</ul>
+<div class="text-over-banner">
+	<div class="slogan">
+		<h1 class="title">{{vm.BannerData.Title}}</h1>
+		<h3 class="title">{{vm.BannerData.Description}}</h3>
+		<form class="search-container">
+			<input type="text" class="searchBox" name="searchBox" placeholder="Search"/>
+			<button type="submit" class="search-icon"><i class="fa fa-2x fa-search"></i></button>
+		</form>
+	</div>
+</div>
+
+<!-- <ul class="bxslider" id="top-slider" full-width-slider>
 	<li ng-repeat="item in vm.items"><img class="img-responsive" ng-src="{{item.imgSrc}}" /></li>
 </ul>
 <div class="text-over-banner">
@@ -11,3 +25,4 @@
 		</form>
 	</div>
 </div>
+ -->

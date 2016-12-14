@@ -1,3 +1,28 @@
+<div class="container" ng-init="vm.LoadChairMain()">
+	<div class="chairman-word-wrapper home-section clearfix">
+		<figure class="img-container float-left margin-right-20 top-right-blue-pattern triangle-right-lime-after">
+			<img class="img-responsive" ng-src="http://demoserver.tacme.net:3030/dmco{{vm.ChairMainData.MainImage}}" />
+		</figure>
+		<div class="textWrapper float-right">
+			<h2 class='section-title text-uppercase margin-top-0'>{{vm.ChairMainData.Title}} </h2>
+			<p>
+				<span ng-bind-html="vm.SafeHtml(vm.ChairMainData.Content)" ></span>
+			</p>
+			<span class='name'>{{vm.ChairMainData.Keywords}}</span>
+			<span class='designation'>{{vm.ChairMainData.MetaPageTitle}}</span>
+			<!--<a class="blue-btn  margin-top-40" href="javascript:void(0)"><span>Read more</span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>-->
+		</div>
+		<div class="clearfix"></div>
+		<div class="quote-wrapper">
+			<blockquote>
+				{{vm.ChairMainData.Description}}
+			</blockquote>
+			<span class="author">{{vm.ChairMainData.MetaPageDescription}}</span>
+		</div>
+	</div>
+</div>
+
+<!--
 <div class="container">
 	<div class="chairman-word-wrapper home-section clearfix">
 		<figure class="img-container float-left margin-right-20 top-right-blue-pattern triangle-right-lime-after">
@@ -21,4 +46,5 @@
 			<span class="author">SULTAN AHMED BIN SULAYEM</span>
 		</div>
 	</div>
-</div>
+</div>  
+-->

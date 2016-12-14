@@ -1,4 +1,18 @@
-<div class="container">
+<div class="container" ng-init="vm.LoadPotential()">
+	<div class="potential-wrapper  home-section clearfix">
+		<figure class="img-container float-right margin-left-20 triangle-left-acqa-after triangle-left-white-before">
+			<img class="img-responsive" ng-src="http://demoserver.tacme.net:3030/dmco{{vm.PotentialData.MainImage}}" />
+		</figure>
+		<div class="textWrapper float-left">
+			<h2 class='section-title text-uppercase margin-top-0'>{{vm.PotentialData.Title}}</h2>
+			<h4 class="section-subtitle text-uppercase">{{vm.PotentialData.Description}} </h4>			
+            <span ng-bind-html="vm.SafeHtml(vm.PotentialData.Content)" ></span>
+			<!--<a class="blue-btn margin-top-40" href="javascript:void(0)"><span>Read more</span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>-->
+		</div>
+	</div>
+</div>
+
+<!-- <div class="container">
 	<div class="potential-wrapper  home-section clearfix">
 		<figure class="img-container float-right margin-left-20 triangle-left-acqa-after triangle-left-white-before">
 			<img class="img-responsive" src="assets/images/home/potential.png" />
@@ -19,3 +33,4 @@
 		</div>
 	</div>
 </div>
+ -->

@@ -165,3 +165,31 @@ h4 {
         display: block;
     }
 }
+
+.move-to-top {
+    font-size: $font-30 !important;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: 100px;
+    #{$right}: 20px;
+    z-index: 10;
+    border-radius: 50%;
+    background: #1157A8;
+    display: inline-block;
+    position: fixed;
+    text-align: center;
+    color: $white;
+    box-shadow: 0 0 0 4px rgba(17, 87, 168, 0.31);
+    transition: opacity 0.15s ease-in-out;
+    opacity: 0;
+
+    &.cd-is-visible {
+        border: 2px solid $white;
+        opacity: .7;
+    }
+
+    &.cd-fade-out {
+        opacity: .5;
+    }
+}

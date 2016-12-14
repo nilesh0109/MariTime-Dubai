@@ -1,4 +1,21 @@
-<div class="container">
+<div class="container" ng-init="vm.Inovation()">
+	<div class="innovation-wrapper  home-section clearfix">
+		<figure class="img-container float-left margin-right-20 bottom-right-blue-pattern">
+			<img class="img-responsive" src="../assets/images/home/innovation.png" />
+			<img class="img-responsive dmca-logo" ng-src="http://demoserver.tacme.net:3030/dmco{{vm.InnovationData.MainImage}}" />
+			
+		</figure>
+		<div class="textWrapper float-right">
+			<h2 class='section-title text-uppercase'>{{ vm.InnovationData.Title }}</h2>
+			<h4 class="section-subtitle text-uppercase">{{vm.InnovationData.Description}} </h4>
+			<span ng-bind-html="vm.SafeHtml(vm.InnovationData.Content)" ></span>
+			
+			<!--<a class="blue-btn margin-top-40" href="javascript:void(0)"><span>Read more</span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>-->
+		</div>
+	</div>
+</div>
+
+<!-- <div class="container">
 	<div class="innovation-wrapper  home-section clearfix">
 		<figure class="img-container float-left margin-right-20 bottom-right-blue-pattern">
 			<img class="img-responsive" src="assets/images/home/innovation.png" />
@@ -21,3 +38,4 @@
 		</div>
 	</div>
 </div>
+ -->
