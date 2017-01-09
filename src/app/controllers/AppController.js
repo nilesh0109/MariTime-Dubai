@@ -20,7 +20,7 @@
 
             }, function errorCallback(response) {
                 //console.log(response);
-                alert(response);
+                //  alert(response);
             });
         }
 
@@ -30,7 +30,7 @@
             hamburger.siblings('.top-nav').toggleClass('slide-down');
         }
         vm.scrollTo = function(id) {
-            $location.hash(id);
+            // $location.hash(id);
             angular.element('html,body').animate({
                 scrollTop: angular.element('#' + id).offset().top
             });

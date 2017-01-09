@@ -39,7 +39,7 @@
                 contactForm.find('[name="phone"]').controller('ngModel').$render();
                 contactForm.find('[name="comment"]').controller('ngModel').$render();
                 vm.ContactUsForm.$setPristine();
-
+                alert("Your comment is submitted successfully.");
             }, function errorCallback(response) {
                 // console.log(response);
                 // alert(response);
@@ -56,8 +56,8 @@
 
 
             }, function errorCallback(response) {
-                //console.log(response);
-                alert(response);
+
+                // alert(response);
             });
         }
 
@@ -71,8 +71,8 @@
 
 
             }, function errorCallback(response) {
-                //console.log(response);
-                alert(response);
+
+                //  alert(response);
             });
         }
 
@@ -86,8 +86,8 @@
 
 
             }, function errorCallback(response) {
-                //console.log(response);
-                alert(response);
+
+                // alert(response);
             });
         }
 
@@ -101,8 +101,8 @@
 
 
             }, function errorCallback(response) {
-                //console.log(response);
-                alert(response);
+
+                // alert(response);
             });
         }
 
@@ -117,7 +117,7 @@
 
             }, function errorCallback(response) {
                 //console.log(response);
-                alert(response);
+                //   alert(response);
             });
         }
 
@@ -132,7 +132,7 @@
 
             }, function errorCallback(response) {
                 //console.log(response);
-                alert(response);
+                // alert(response);
             });
         }
 
@@ -165,10 +165,11 @@
 
             }, function errorCallback(bannerTextResponse) {
                 //console.log(response);
-                alert(bannerTextResponse);
+                //   alert(bannerTextResponse);
             });
             $q.all([prm1, prm2]).then(function() {
                 vm.bannerLoaded = true;
+
             });
         }
 
@@ -183,7 +184,7 @@
 
             }, function errorCallback(response) {
                 //console.log(response);
-                alert(response);
+                // alert(response);
             });
         }
 
@@ -198,7 +199,7 @@
 
             }, function errorCallback(response) {
                 //console.log(response);
-                alert(response);
+                // alert(response);
             });
         }
     }

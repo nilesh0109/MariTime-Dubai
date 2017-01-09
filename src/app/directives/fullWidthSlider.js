@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('mTDubai').directive('fullWidthSlider', function() {
+    angular.module('mTDubai').directive('fullWidthSlider', function($timeout) {
         return {
             restrict: 'EA',
             transclude: true,
@@ -9,12 +9,15 @@
 
                 element.append(transcludeFn());
                 scope.$parent.$watch('vm.bannerLoaded', function(newVal) {
+
                     if (newVal)
-                        if (element.find('li').length > 1)
+                        $timeout(function() {
+
                             element.bxSlider({
                                 infiniteLoop: false,
                                 hideControlOnEnd: true
                             });
+                        }, 0);
                 });
             }
         }

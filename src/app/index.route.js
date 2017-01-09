@@ -29,8 +29,8 @@
         .run(function($rootScope, $location, $anchorScroll, $routeParams) {
             var $rs = $rootScope;
             $rs.$on('$routeChangeSuccess', function() {
-                $location.hash($routeParams.scrollTo);
-                $anchorScroll();
+                //    $location.hash($routeParams.scrollTo);
+                //    $anchorScroll();
             });
         })
 

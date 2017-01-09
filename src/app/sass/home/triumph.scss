@@ -8,11 +8,11 @@
     }
 
     @media (max-width: $screen-sm-max) {
-        margin-top: -122px;
+        margin-top: -105px;
     }
 
     @media (max-width: $screen-xs-max) {
-        margin-top: -50px;
+        margin-top: 0px;
         margin-bottom: 20px;
     }
 
@@ -21,6 +21,10 @@
 
         @media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
             font-size: $font-28;
+        }
+
+        @media (max-width: $screen-xs-max) {
+            max-width: none;
         }
     }
 
@@ -37,7 +41,7 @@
     .box {
         width: 45%;
         margin-#{$right}: 5%;
-        margin-bottom: 5%;
+        border-bottom: 30px solid white;
 
         @media (max-width: 480px) {
             width: 90%;

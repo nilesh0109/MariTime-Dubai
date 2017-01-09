@@ -91,3 +91,9 @@
     border: 0;
     box-shadow: none;
 }
+
+#contactus-wrapper .pattern {
+    @media (min-width: $screen-lg-min) {
+        margin-top: -150px;
+    }
+}

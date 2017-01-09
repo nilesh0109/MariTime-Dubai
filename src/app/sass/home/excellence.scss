@@ -3,20 +3,25 @@
 
     &:after {
         bottom: auto !important;
-        top: -26px;
+        top: -40px;
         #{$left}: 25px;
-        border-top-width: 120px !important;
-        border-left-width: 40px !important;
-        border-right-width: 40px !important;
     }
 
     &:before {
         bottom: auto !important;
         top: -30px;
         #{$left}: 15px;
-        border-top-width: 150px !important;
-        border-left-width: 50px !important;
-        border-right-width: 50px !important;
+        border-top-width: 155px !important;
+        border-left-width: 90px !important;
+        border-right-width: 90px !important;
+    }
+
+    @media (max-width: 1500px) {
+        &:after, &:before {
+            transition: all 0.15s ease-in-out;
+            margin-top: -20px;
+            transform: scale(0.8);
+        }
     }
 
     @media (max-width: $screen-md-max) {
@@ -24,7 +29,7 @@
         margin-bottom: 0 !important;
 
         &:after, &:before {
-            margin-top: -40px;
+            margin-top: -30px;
         }
     }
 
